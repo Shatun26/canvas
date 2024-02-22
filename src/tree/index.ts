@@ -39,3 +39,21 @@ const drawFrame = () => {
 };
 
 requestAnimationFrame(drawFrame);
+
+const sliders = document.querySelectorAll<HTMLDivElement>('.sliderContainer');
+
+sliders.forEach((slider) => {
+  slider.addEventListener('mousedown', () => {
+    sliders.forEach((s) => {
+      if (s !== slider) {
+        s.style.opacity = '0.05';
+      }
+    });
+  });
+
+  slider.addEventListener('mouseup', () => {
+    sliders.forEach((s) => {
+      s.style.opacity = '1';
+    });
+  });
+});
