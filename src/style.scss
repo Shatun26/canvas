@@ -1,0 +1,52 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow: hidden;
+}
+
+.test {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: center;
+  padding: 20px;
+  opacity: 0.1;
+  transition: 0.3s;
+  height: 20px;
+  overflow: hidden;
+
+  div {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+  }
+  span {
+    color: white;
+    opacity: 0;
+  }
+  input {
+    flex-shrink: 0;
+    width: 100%;
+    transition: 0.2s;
+  }
+
+  &:hover {
+    opacity: 1;
+    gap: 10px;
+    height: auto;
+    border-radius: 16px;
+    background-color: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
+    span {
+      opacity: 1;
+    }
+    input {
+      width: 500px;
+    }
+  }
+}
