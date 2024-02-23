@@ -10,7 +10,7 @@ body {
   overflow: hidden;
 }
 
-.test {
+.slidersWrapper {
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -21,7 +21,7 @@ body {
   transition: 0.3s;
   height: 20px;
   overflow: hidden;
-
+  top: 0;
   div {
     display: flex;
     gap: 10px;

@@ -1,15 +1,15 @@
-import { SLIDERS } from '../menu';
 import { canvas, ctx } from './core';
 import { drawLineFromCenter } from './draw';
-import { CONST } from './draw/constants';
+import { SLIDERS_DATA } from './menu/constants';
 
 window.addEventListener('resize', () => (ctx.lineWidth = 4));
-ctx.lineWidth = 4;
 
 let sliderValue = 0;
 
 const drawFrame = () => {
-  sliderValue += SLIDERS.s1;
+  sliderValue += SLIDERS_DATA.speed.value;
+  ctx.lineWidth = SLIDERS_DATA.width.value;
+
   ctx.clearRect(
     -canvas.width / 2,
     -canvas.height / 2,
@@ -18,11 +18,12 @@ const drawFrame = () => {
   );
 
   drawLineFromCenter({
-    length: CONST.lineLenght,
-    angle: CONST.angle,
-    deep: 1,
-    maxDeep: SLIDERS.s2,
+    length: SLIDERS_DATA.lenght.value,
+    maxDeep: SLIDERS_DATA.deep.value,
     offset_angle: sliderValue,
+    angleFactor: SLIDERS_DATA.angleFactor.value,
+    color: SLIDERS_DATA.color.value,
+    colorFactor: SLIDERS_DATA.colorFactor.value,
   });
 
   requestAnimationFrame(drawFrame);

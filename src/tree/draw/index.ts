@@ -5,20 +5,26 @@ type Args = {
   x?: number;
   y?: number;
   length: number;
-  angle: number;
-  deep: number;
+  angle?: number;
+  deep?: number;
   offset_angle: number;
   maxDeep: number;
+  angleFactor: number;
+  color: number;
+  colorFactor: number;
 };
 
 export const drawLineFromCenter = ({
   x = 0,
   y = 0,
   length,
-  angle,
+  angle = 45,
   offset_angle,
-  deep,
+  deep = 1,
   maxDeep,
+  angleFactor,
+  colorFactor,
+  color,
 }: Args) => {
   if (deep > maxDeep) return;
 
@@ -31,7 +37,7 @@ export const drawLineFromCenter = ({
   let x_2 = length * Math.cos(radianAngleMirror);
   let y_2 = length * Math.sin(radianAngleMirror);
 
-  ctx.strokeStyle = adjustHue(100, deep / 5);
+  ctx.strokeStyle = adjustHue(color, deep / colorFactor);
 
   ctx.beginPath();
   ctx.moveTo(x, y);
@@ -44,10 +50,13 @@ export const drawLineFromCenter = ({
     x: x + x_1,
     y: y + y_1,
     length: length * 0.7,
-    angle: angle - offset_angle,
+    angle: angle - offset_angle + angleFactor,
     deep: deep + 1,
     offset_angle,
     maxDeep,
+    angleFactor,
+    color,
+    colorFactor,
   });
 
   drawLineFromCenter({
@@ -57,6 +66,9 @@ export const drawLineFromCenter = ({
     angle: angle + offset_angle,
     deep: deep + 1,
     offset_angle,
-    maxDeep
+    maxDeep,
+    angleFactor,
+    color,
+    colorFactor,
   });
 };
