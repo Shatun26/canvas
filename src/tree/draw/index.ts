@@ -39,12 +39,14 @@ export const drawLineFromCenter = ({
 
   ctx.strokeStyle = adjustHue(color, deep / colorFactor);
 
-  ctx.beginPath();
-  ctx.moveTo(x, y);
-  ctx.lineTo(x + x_1, y + y_1);
-  ctx.moveTo(x, y);
-  ctx.lineTo(x + x_2, y + y_2);
-  ctx.stroke();
+  if (deep > 5) {
+    ctx.beginPath();
+    ctx.moveTo(x, y);
+    ctx.lineTo(x + x_1, y + y_1);
+    ctx.moveTo(x, y);
+    ctx.lineTo(x + x_2, y + y_2);
+    ctx.stroke();
+  }
 
   drawLineFromCenter({
     x: x + x_1,
