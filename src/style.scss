@@ -36,6 +36,17 @@ body {
     flex-shrink: 0;
     width: 100%;
     transition: 0.2s;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: '';
+      left: calc(50% - 1px);
+      top: 50%;
+      transform: translateY(-50%);
+      height: 50%;
+      border-right: 2px solid white;
+    }
   }
 
   &:hover {

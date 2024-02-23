@@ -16,17 +16,14 @@ sliders.forEach((slider) => {
   });
 });
 
-const slider = document.getElementById('slider1') as HTMLInputElement;
+const slider1 = document.getElementById('slider1') as HTMLInputElement;
+const slider1Value = document.getElementById('slider1Value') as HTMLSpanElement;
 
 export const SLIDERS = {
-  s1: 0,
+  s1: 0.2,
 };
 
-slider.addEventListener('dblclick', () => {
-  SLIDERS.s1 = 0;
-  slider.value = '0';
-});
-
-slider.addEventListener('input', () => {
-  SLIDERS.s1 = +slider.value;
+slider1.addEventListener('input', () => {
+  SLIDERS.s1 = +slider1.value;
+  slider1Value.innerText = slider1.value;
 });
