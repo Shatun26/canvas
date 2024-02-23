@@ -1,5 +1,6 @@
 To start project 
- npm i
- npm run start
+    use 14v of Node.js
+    npm i
+    npm run start
 
  

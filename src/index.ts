@@ -1,2 +1,4 @@
 import './style.scss';
-import './tree'
+import './tree';
+import './menu';
+

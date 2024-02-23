@@ -11,12 +11,9 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
+      filename: 'index.html',
     }),
   ],
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
-  },
   module: {
     rules: [
       {
@@ -25,12 +22,12 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
+        test: /\.html$/,
+        use: ['html-loader'],
+      },
+      {
         test: /\.scss$/,
-        use: [
-          'style-loader', // Добавляет стили в DOM при помощи тега <style>
-          'css-loader', // Интерпретирует @import и url() как import/require() и разрешает их
-          'sass-loader', // Компилирует SCSS в CSS
-        ],
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
     ],
   },

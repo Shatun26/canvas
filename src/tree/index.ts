@@ -1,3 +1,4 @@
+import { SLIDERS } from '../menu';
 import { canvas, ctx } from './core';
 import { drawLineFromCenter } from './draw';
 import { CONST } from './draw/constants';
@@ -19,8 +20,9 @@ import { CONST } from './draw/constants';
 
 let sliderValue = 0;
 ctx.lineWidth = 4;
+
 const drawFrame = () => {
-  sliderValue += 1;
+  sliderValue += SLIDERS.s1;
   ctx.clearRect(
     -canvas.width / 2,
     -canvas.height / 2,
@@ -39,21 +41,3 @@ const drawFrame = () => {
 };
 
 requestAnimationFrame(drawFrame);
-
-const sliders = document.querySelectorAll<HTMLDivElement>('.sliderContainer');
-
-sliders.forEach((slider) => {
-  slider.addEventListener('mousedown', () => {
-    sliders.forEach((s) => {
-      if (s !== slider) {
-        s.style.opacity = '0.05';
-      }
-    });
-  });
-
-  slider.addEventListener('mouseup', () => {
-    sliders.forEach((s) => {
-      s.style.opacity = '1';
-    });
-  });
-});
