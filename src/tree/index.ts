@@ -3,23 +3,10 @@ import { canvas, ctx } from './core';
 import { drawLineFromCenter } from './draw';
 import { CONST } from './draw/constants';
 
-// const slider = document.getElementById('slider') as HTMLInputElement;
-// slider.addEventListener('input', () => {
-//   sliderValue = +slider.value;
-//   ctx.clearRect(-1000, -1000, 30000, 20000);
-
-//   drawLineFromCenter({
-//     x: 0,
-//     y: 0,
-//     length: CONST.lineLenght,
-//     angle: CONST.angle,
-//     deep: 0,
-//     offset_angle: sliderValue,
-//   });
-// });
+window.addEventListener('resize', () => (ctx.lineWidth = 4));
+ctx.lineWidth = 4;
 
 let sliderValue = 0;
-ctx.lineWidth = 4;
 
 const drawFrame = () => {
   sliderValue += SLIDERS.s1;
