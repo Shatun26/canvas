@@ -8,6 +8,7 @@ type Args = {
   angle: number;
   deep: number;
   offset_angle: number;
+  maxDeep: number;
 };
 
 export const drawLineFromCenter = ({
@@ -17,8 +18,9 @@ export const drawLineFromCenter = ({
   angle,
   offset_angle,
   deep,
+  maxDeep,
 }: Args) => {
-  if (deep > 12) return;
+  if (deep > maxDeep) return;
 
   const radianAngle = getRadianAngle(angle);
   const radianAngleMirror = getRadianAngle(angle) + Math.PI / 2;
@@ -45,6 +47,7 @@ export const drawLineFromCenter = ({
     angle: angle - offset_angle,
     deep: deep + 1,
     offset_angle,
+    maxDeep,
   });
 
   drawLineFromCenter({
@@ -54,5 +57,6 @@ export const drawLineFromCenter = ({
     angle: angle + offset_angle,
     deep: deep + 1,
     offset_angle,
+    maxDeep
   });
 };

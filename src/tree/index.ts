@@ -21,6 +21,7 @@ const drawFrame = () => {
     length: CONST.lineLenght,
     angle: CONST.angle,
     deep: 1,
+    maxDeep: SLIDERS.s2,
     offset_angle: sliderValue,
   });
 
