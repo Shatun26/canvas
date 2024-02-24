@@ -12,8 +12,8 @@ export const SLIDERS_DATA: TSliderData = {
   },
   deep: { min: 2, max: 20, step: 1, value: 12, name: 'deep' },
   deepStart: {
-    min: 0,
-    max: 12,
+    min: 2,
+    max: 20,
     step: 1,
     value: 5,
     name: 'deep start',
