@@ -12,6 +12,7 @@ type Args = {
   angleFactor: number;
   color: number;
   colorFactor: number;
+  deepStart: number;
 };
 
 export const drawLineFromCenter = ({
@@ -21,6 +22,7 @@ export const drawLineFromCenter = ({
   angle = 45,
   offset_angle,
   deep = 1,
+  deepStart,
   maxDeep,
   angleFactor,
   colorFactor,
@@ -39,7 +41,7 @@ export const drawLineFromCenter = ({
 
   ctx.strokeStyle = adjustHue(color, deep / colorFactor);
 
-  if (deep > 5) {
+  if (deep > deepStart) {
     ctx.beginPath();
     ctx.moveTo(x, y);
     ctx.lineTo(x + x_1, y + y_1);
@@ -59,6 +61,7 @@ export const drawLineFromCenter = ({
     angleFactor,
     color,
     colorFactor,
+    deepStart,
   });
 
   drawLineFromCenter({
@@ -72,5 +75,6 @@ export const drawLineFromCenter = ({
     angleFactor,
     color,
     colorFactor,
+    deepStart,
   });
 };

@@ -6,6 +6,7 @@ enum SliderKeys {
   angleFactor = 'angleFactor',
   colorFactor = 'colorFactor',
   color = 'color',
+  deepStart = 'deepStart',
 }
 
 export type TSliderData = Record<

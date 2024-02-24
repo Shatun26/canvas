@@ -24,6 +24,7 @@ const drawFrame = () => {
     angleFactor: SLIDERS_DATA.angleFactor.value,
     color: SLIDERS_DATA.color.value,
     colorFactor: SLIDERS_DATA.colorFactor.value,
+    deepStart: SLIDERS_DATA.deepStart.value,
   });
 
   requestAnimationFrame(drawFrame);

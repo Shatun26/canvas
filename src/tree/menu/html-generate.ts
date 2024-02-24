@@ -9,7 +9,7 @@ for (const [key, { min, max, step, value, name }] of Object.entries(
 )) {
   slidersWrapper.innerHTML += `<div class=${SLIDER_CLASSES.sliderContainer} id=${key}>
     <input type="range" min=${min} max=${max} value=${value} step=${step} class=${SLIDER_CLASSES.sliderInput}  />
-    <span>${name}</span>
+    <span class="name">${name}</span>
     <span class=${SLIDER_CLASSES.sliderValue}>${value}</span>
     </div>`;
 }

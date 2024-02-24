@@ -11,6 +11,13 @@ export const SLIDERS_DATA: TSliderData = {
     name: 'speed',
   },
   deep: { min: 2, max: 20, step: 1, value: 12, name: 'deep' },
+  deepStart: {
+    min: 0,
+    max: 12,
+    step: 1,
+    value: 5,
+    name: 'deep start',
+  },
   lenght: { min: 1, max: 500, step: 1, value: 250, name: 'lenght' },
   width: { min: 1, max: 10, step: 0.2, value: 3.2, name: 'width' },
   angleFactor: { min: 0, max: 180, step: 1, value: 138, name: 'angleFactor' },
