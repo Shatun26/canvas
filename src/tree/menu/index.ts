@@ -37,3 +37,14 @@ sliders.forEach((slider) => {
     sliderValue.innerText = input.value;
   });
 });
+
+let cashedSpeed = SLIDERS_DATA.speed.value;
+document.body.onkeydown = (e) => {
+  if (e.code === 'Space') {
+    if (SLIDERS_DATA.speed.value) {
+      SLIDERS_DATA.speed.value = 0;
+    } else {
+      SLIDERS_DATA.speed.value = cashedSpeed;
+    }
+  }
+};
