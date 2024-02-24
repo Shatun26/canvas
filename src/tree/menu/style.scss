@@ -10,16 +10,20 @@
   height: 20px;
   overflow: hidden;
   top: 0;
-  div {
+
+  .sliderContainer {
     display: flex;
     gap: 10px;
     width: 100%;
     transition: 0.3s;
   }
+
   span {
     color: white;
     opacity: 0;
+    white-space: nowrap;
   }
+
   input {
     flex-shrink: 0;
     width: 100%;
@@ -35,6 +39,11 @@
       height: 50%;
       border-right: 2px solid white;
     }
+  }
+
+  .sliderValue {
+    color: rgb(48, 138, 255);
+    width: 30px;
   }
 
   &:hover {
