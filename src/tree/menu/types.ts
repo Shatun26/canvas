@@ -5,7 +5,7 @@ enum SliderKeys {
   width = 'width',
   angleFactor = 'angleFactor',
   colorFactor = 'colorFactor',
-  color = 'color',
+  colorSpeed = 'colorSpeed',
   deepStart = 'deepStart',
 }
 
@@ -20,7 +20,7 @@ export type TSliderData = Record<
   }
 >;
 
-export enum SLIDER_CLASSES {
+export enum MENU_CLASSES {
   sliderContainer = 'sliderContainer',
   sliderValue = 'sliderValue',
   sliderInput = 'sliderInput',

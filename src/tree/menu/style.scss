@@ -2,14 +2,11 @@
   position: absolute;
   display: flex;
   flex-direction: column;
-  gap: 2px;
-  align-items: center;
   padding: 20px;
   opacity: 0.1;
   transition: 0.3s;
   height: 20px;
   overflow: hidden;
-  top: 0;
 
   .sliderContainer {
     display: flex;
@@ -28,17 +25,6 @@
     flex-shrink: 0;
     width: 100%;
     transition: 0.2s;
-    position: relative;
-
-    &::before {
-      position: absolute;
-      content: '';
-      left: calc(50% - 1px);
-      top: 50%;
-      transform: translateY(-50%);
-      height: 50%;
-      border-right: 2px solid white;
-    }
   }
 
   .sliderValue {
@@ -56,5 +42,9 @@
     input {
       width: 500px;
     }
+  }
+  .copySettings {
+    width: fit-content;
+    padding: 4px 8px;
   }
 }

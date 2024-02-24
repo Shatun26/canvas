@@ -1,8 +1,8 @@
 import { SLIDERS_DATA, slidersWrapper } from './constants';
-import { SLIDER_CLASSES } from './types';
+import { MENU_CLASSES } from './types';
 
 const sliders = slidersWrapper.querySelectorAll<HTMLDivElement>(
-  `.${SLIDER_CLASSES.sliderContainer}`
+  `.${MENU_CLASSES.sliderContainer}`
 );
 
 sliders.forEach((slider) => {
@@ -23,11 +23,11 @@ sliders.forEach((slider) => {
 
 sliders.forEach((slider) => {
   const input = slider.querySelector(
-    `.${SLIDER_CLASSES.sliderInput}`
+    `.${MENU_CLASSES.sliderInput}`
   ) as HTMLInputElement;
 
   const sliderValue = slider.querySelector(
-    `.${SLIDER_CLASSES.sliderValue}`
+    `.${MENU_CLASSES.sliderValue}`
   ) as HTMLSpanElement;
 
   const sliderId = slider.id as keyof typeof SLIDERS_DATA;
